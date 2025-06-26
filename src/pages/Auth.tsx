@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
 import { Button } from '@/components/ui/button';
@@ -7,9 +6,9 @@ import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Heart, UserPlus, LogIn, Stethoscope, Users, Shield, Activity } from 'lucide-react';
+import { Heart, UserPlus, LogIn, Stethoscope, Users, Shield, Activity, ArrowLeft } from 'lucide-react';
 import { Database } from '@/integrations/supabase/types';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useToast } from '@/components/ui/use-toast';
 
 type UserRole = Database['public']['Enums']['user_role'];
@@ -94,6 +93,14 @@ const Auth = () => {
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50 flex items-center justify-center p-4">
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
+          <div className="flex items-center justify-between mb-4">
+            <Link to="/">
+              <Button variant="ghost" size="sm">
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Back to Demo
+              </Button>
+            </Link>
+          </div>
           <div className="flex items-center justify-center space-x-2 mb-4">
             <div className="bg-gradient-to-r from-blue-600 to-green-600 p-2 rounded-full">
               <Heart className="h-6 w-6 text-white" />
