@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Loader2, Sparkles, Clock, Utensils, Pill, Shower } from 'lucide-react';
+import { Loader2, Sparkles, Clock, Utensils, Pill, Bath } from 'lucide-react';
 import { callGeminiAPI } from '@/utils/geminiAPI';
 
 const commonPreOpInstructions = [
@@ -77,7 +77,7 @@ Please provide a simplified, patient-friendly version.`;
               let icon;
               if (instruction.includes('eat') || instruction.includes('drink')) icon = <Utensils className="h-4 w-4 text-orange-500" />;
               else if (instruction.includes('medication')) icon = <Pill className="h-4 w-4 text-blue-500" />;
-              else if (instruction.includes('shower')) icon = <Shower className="h-4 w-4 text-green-500" />;
+              else if (instruction.includes('shower')) icon = <Bath className="h-4 w-4 text-green-500" />;
               else icon = <Clock className="h-4 w-4 text-gray-500" />;
 
               return (
