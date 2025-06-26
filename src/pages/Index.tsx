@@ -10,7 +10,8 @@ import { MedicationTracker } from '@/components/MedicationTracker';
 import { ChatbotInterface } from '@/components/ChatbotInterface';
 import { SymptomTracker } from '@/components/SymptomTracker';
 import { EmergencyContact } from '@/components/EmergencyContact';
-import { Heart, User, Calendar, MessageCircle, Pill, Activity } from 'lucide-react';
+import { DatabaseInitializer } from '@/components/DatabaseInitializer';
+import { Heart, User, Calendar, MessageCircle, Pill, Activity, Database } from 'lucide-react';
 
 const Index = () => {
   const [currentStage, setCurrentStage] = useState<'pre-op' | 'post-op'>('pre-op');
@@ -29,6 +30,7 @@ const Index = () => {
 
   const tabs = [
     { id: 'dashboard', label: 'Dashboard', icon: User },
+    { id: 'database', label: 'Setup', icon: Database },
     { id: 'pre-op', label: 'Pre-Op', icon: Calendar },
     { id: 'post-op', label: 'Post-Op', icon: Heart },
     { id: 'medications', label: 'Medications', icon: Pill },
@@ -128,6 +130,7 @@ const Index = () => {
           </div>
         )}
 
+        {activeTab === 'database' && <DatabaseInitializer />}
         {activeTab === 'pre-op' && <PreOpProtocols />}
         {activeTab === 'post-op' && <PostOpInstructions />}
         {activeTab === 'medications' && (
